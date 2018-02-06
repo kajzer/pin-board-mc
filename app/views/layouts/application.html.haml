@@ -1,0 +1,17 @@
+!!!5
+%html
+  %head
+    %title Pin Board
+    = csrf_meta_tags
+    
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    
+  
+  
+  %body
+    - flash.each do |name, msg|
+      = tag.div class: 'alert alert-info' do
+        = msg
+    = yield
+
