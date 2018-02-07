@@ -10,6 +10,18 @@
   
   
   %body
+    %nav.navbar.navbar-light.navbar-expand-md
+      %button.navbar-toggler.navbar-toggler-right{"type" => "button", "data-toggle" => "collapse", "data-target" => "#navbarSupportedContent", "aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation"} 
+        #span.navbar-toggler-icon
+      = link_to "Pin Board", root_path, class: "navbar-brand"
+
+      
+      -if user_signed_in?
+        .collapse.navbar-collapse#navbarSupportedContent
+          %ul.navbar-nav.mr-auto
+            %li.nav-item= link_to "New Pin", new_pin_path, class: "nav-link"
+            %li.nav-item= link_to "Account", edit_user_registration_path, class: "nav-link"
+          
     - flash.each do |name, msg|
       = tag.div class: 'alert alert-info' do
         = msg
