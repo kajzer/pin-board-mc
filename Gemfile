@@ -37,7 +37,8 @@ gem 'jquery-rails'
 gem 'bootstrap'
 gem 'simple_form'
 gem 'devise'
-gem "paperclip"
+gem 'paperclip'
+gem 'masonry-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

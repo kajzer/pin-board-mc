@@ -12,7 +12,20 @@
 //
 //= require jquery3
 //= require rails-ujs
+//= require masonry/jquery.masonry
 //= require turbolinks
 //= require popper
 //= require bootstrap-sprockets
 //= require_tree .
+$( document ).on('turbolinks:load', function() {
+
+  var $container = $('#pins');
+
+  $container.imagesLoaded(function(){
+    $container.masonry({
+      itemSelector: '.box',
+      ifFitWidth: true
+    });
+  });
+})
+  
