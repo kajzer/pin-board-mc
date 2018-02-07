@@ -3,6 +3,9 @@
         .card
             = image_tag @pin.image.url(:medium), class: "card-img-top"
             = tag.div class: "card-body" do
+                = link_to like_pin_path(@pin), method: :put, id: "heart", class: "btn float-right", role: "button" do
+                    %i.far.fa-heart 
+                        =@pin.get_upvotes.size
                 %h3.card-title= @pin.title
                 %p.card-text= @pin.description
             .card-footer.text-muted
